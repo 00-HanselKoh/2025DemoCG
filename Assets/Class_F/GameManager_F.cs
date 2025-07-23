@@ -15,7 +15,7 @@ public class GameManager_F : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     // Reference to the AudioSource //
-    public AudioSource audioSource;
+    private AudioSource audioSource;
 
     // Reference of the AudioClip //
     public AudioClip[] healSoundArr;
@@ -36,6 +36,9 @@ public class GameManager_F : MonoBehaviour
 
         // Display the current health onto the screen //
         scoreText.text = "Health: " + this.health;
+
+        // Get reference to the AudioSoirce component //
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Create a function to add health //

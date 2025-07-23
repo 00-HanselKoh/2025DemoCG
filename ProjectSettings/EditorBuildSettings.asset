@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Environment/Winter/Scene/Winter (Blank).unity
+    guid: 45db6927a1133d141b33a4662af77974
   m_configObjects: {}
