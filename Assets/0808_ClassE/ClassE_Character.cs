@@ -18,23 +18,33 @@ public class ClassE_Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Add a tempSpeed variable //
+        float tempSpeed = speed;
+
         // Simple user input to move forward //
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 
                                         0, 
                                         Input.GetAxis("Vertical"));
 
+        // Check if Shift is pressed to Run //
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            tempSpeed = speed * 2;
+        }
+
+
         // Check if there is user input to the direction //
         if (direction.magnitude > 0)
         {
             // Move character, in the direction and multiply by the speed over time //
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += direction * tempSpeed * Time.deltaTime;
 
             // Make the character face the direction it's moving //
             transform.forward = direction;
         }
 
         // Change the speed in the animator depending on the speed //
-        animator.SetFloat("Speed", (direction * speed).magnitude);
+        animator.SetFloat("Speed", (direction * tempSpeed).magnitude);
 
         // Example: 
         // direction - (1, 0, 1)
